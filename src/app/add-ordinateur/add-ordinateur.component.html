@@ -1,0 +1,43 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un Medecin :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Medecin</label>
+        <input type="text" [(ngModel)]="newMedecin.idMedecin"
+        name="idMedecin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Nom Medecin</label>
+        <input type="text"[(ngModel)]= "newMedecin.nomMedecin"
+        name="nomMedecin" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Prix Medecin</label>
+        <input type="number" [(ngModel)]= "newMedecin.salaireMedecin"
+        name="prixMedecin" class="form-control">
+        </div><div class="col-sm-2 col-md-2 col-lg-2">
+            <label >prenom</label>
+            <input type="text" [(ngModel)]= "newMedecin.prenomMedecin"
+            name="prenomMedecin" class="form-control">
+            </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+        <input type="date" [(ngModel)]= "newMedecin.dateNaissance"
+        name="dateCreation" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Marque</label>
+            <select class="form-control form-control-lg" id="idCat" name="idCat"
+            [(ngModel)]="newIdMar">
+             <option *ngFor="let cat of specialite" [value]="cat.idSpecialite" >
+             {{cat.nomSpecialite}}
+            </option>
+            </select>
+            </div>
+        
+        <div class="mt-2">
+        <button (click)="addMedecin()"class="btn btn-success">Ajouter</button>
+        </div>
+    </form>

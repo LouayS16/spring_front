@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th> <th>Date Création</th> <th>Marque</th><th>prenom</th></tr>
+    <tbody *ngFor="let pc of ordinateurs">
+    <tr >
+    <td>{{pc.idMedecin}}</td>
+    <td>{{pc.nomMedecin}}</td>
+    <td>{{pc.salaireMedecin}}</td>
+    <td>{{pc.dateNaissance   | date:'dd/MM/yyyy'}}</td>
+    <td>{{pc.specialiteMedecin?.nomSpecialite}}</td>
+    <td><a  *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerProduit(pc)">Supprimer</a></td>
+    <td><a  *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/update',pc.idMedecin]">Modifier</a></td>
+    
+    <td>{{pc.prenomMedecin}}</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

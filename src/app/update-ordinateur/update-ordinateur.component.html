@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+    <h2>Modifier un Medecin :</h2>
+    </div>
+    <form #formRef="ngForm" (ngSubmit)="updateMedecin()">
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Medecin</label>
+    <input readonly type="text" [(ngModel)]="currentMedecin.idMedecin"
+    name="idMedecin" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Medecin</label>
+    <input type="text"[(ngModel)]= "currentMedecin.nomMedecin"
+    name="nomMedecin" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Medecin</label>
+    <input type="number" [(ngModel)]= "currentMedecin.salaireMedecin"
+    name="prixMedecin" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Date création</label>
+<input type="date" [ngModel]="currentMedecin.dateNaissance | date: 'yyyy-MM-dd'"
+(ngModelChange)=" currentMedecin.dateNaissance= $event" name="dateCreation"
+ class="form-control">
+</div>
+<div class="col-sm-4 col-md-4 col-lg-4">
+    <select class="form-control form-control-lg" id="idSpecialite" name="idSpecialite"
+    [(ngModel)]="updatedMarId">
+    <option *ngFor="let cat of specialites" [value]="cat.idSpecialite" >
+    {{cat.nomSpecialite}}
+    </option>
+    </select>
+    </div>
+    
+<div class="mt-2">
+    <button type="submit" class="btn btn-success">Modifier</button>
+</div>
+</form>
+</div>
